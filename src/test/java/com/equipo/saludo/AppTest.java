@@ -7,6 +7,6 @@ public class AppTest {
 
     @Test
     public void testSaludo() {
-        assertEquals("¡Hola, DevOps!", App.saludar("DevOps"));
+        assertEquals("¡Hola, DevOps Espero poder verte!", App.saludar("DevOps"));
     }
 }
