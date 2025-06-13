@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Clonar') {
             steps {
-                git 'https://github.com/FranciscoLeivaN/saludoapp.git'
+                checkout scm
             }
         }
         
