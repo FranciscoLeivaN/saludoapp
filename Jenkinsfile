@@ -6,7 +6,7 @@ pipeline {
     agent any
     
     tools {
-        maven 'Maven 4.0.0'
+        maven 'Maven 3.8.6'
         jdk 'JDK11'
     }
     
@@ -19,19 +19,19 @@ pipeline {
         
         stage('Compilar') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         
         stage('Probar') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         
         stage('Empaquetar') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
     }
