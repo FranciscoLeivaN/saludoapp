@@ -6,32 +6,32 @@ pipeline {
     agent any
     
     tools {
-        maven 'Maven 3.8.6'
+        maven 'Maven 4.0.0'
         jdk 'JDK11'
     }
     
     stages {
         stage('Clonar') {
             steps {
-                checkout scm
+                git 'https://github.com/FranciscoLeivaN/saludoapp.git'
             }
         }
         
         stage('Compilar') {
             steps {
-                bat 'mvn clean compile'
+                sh 'mvn clean compile'
             }
         }
         
         stage('Probar') {
             steps {
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
         
         stage('Empaquetar') {
             steps {
-                bat 'mvn package'
+                sh 'mvn package'
             }
         }
     }
